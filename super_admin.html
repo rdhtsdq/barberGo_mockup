@@ -10,57 +10,58 @@
     <!-- Sidebar + Main Layout -->
     <div class="flex min-h-screen">
       <!-- Sidebar -->
-      <aside class="w-64 bg-white shadow-sm flex flex-col">
+      <aside class="w-64 bg-white shadow-md flex flex-col fixed inset-y-0">
         <div class="p-6 border-b">
           <h1 class="text-2xl font-bold text-blue-600">BarberGO</h1>
-          <p class="text-sm text-slate-500">Super Admin</p>
+          <p class="text-sm text-slate-500 mt-1">Super Admin</p>
         </div>
         <nav class="flex-1 p-4 space-y-2">
           <a
             href="super_admin.html"
-            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            class="flex items-center px-3 py-2 rounded-lg text-blue-600 bg-blue-50 font-semibold transition-all duration-200"
             >🏠 Dashboard</a
           >
           <a
             href="super_admin_barbers.html"
-            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
             >🏢 Manage Barbershops</a
           >
           <a
             href="super_admin_manage_admin.html"
-            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
             >👥 Manage Admins</a
           >
           <a
             href="super_admin_reports.html"
-            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
             >📊 Reports</a
           >
           <div class="border-t my-4"></div>
           <a
-            href="#app-settings"
-            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            href="super_admin_settings.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
             >⚙️ App Settings</a
           >
           <a
-            href="#master-data"
-            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            href="super_admin_master_data.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
             >📁 Master Data</a
           >
           <a
-            href="#promotions"
-            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            href="super_admin_promotions.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
             >🎯 Global Promotions</a
           >
           <a
             href="#transactions"
-            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
             >💳 Transactions</a
           >
         </nav>
-        <div class="p-4 border-t">
+        <div class="border-t mt-auto">
           <button
-            class="w-full px-4 py-2 bg-slate-100 rounded-lg hover:bg-slate-200 text-slate-700 font-medium transition-all duration-200"
+            onclick="window.location.href='login.html'"
+            class="w-full flex items-center px-3 py-2 rounded-lg text-red-600 hover:bg-red-50 transition-all duration-200 m-4"
           >
             🚪 Logout
           </button>
@@ -68,14 +69,11 @@
       </aside>
 
       <!-- Main Content -->
-      <main class="flex-1 p-6">
-        <!-- Header -->
-        <header class="mb-6">
+      <div class="flex-1 ml-64 flex flex-col min-h-screen">
+        <!-- Top Navbar -->
+        <header class="bg-white border-b px-6 py-4">
           <div class="flex items-center justify-between">
-            <div>
-              <h1 class="text-2xl font-bold text-slate-800">Super Admin Dashboard</h1>
-              <p class="text-slate-600">Welcome back! Here's what's happening with your platform.</p>
-            </div>
+            <h2 class="text-xl font-semibold text-slate-800">Super Admin Dashboard</h2>
             <div class="flex items-center space-x-4">
               <button class="px-4 py-2 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200">
                 <span class="text-slate-600">🔔</span>
@@ -94,7 +92,10 @@
         </header>
 
         <!-- Quick Stats -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                <!-- Dashboard Content -->
+        <div class="p-6 flex-1">
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
           <div class="bg-white rounded-xl shadow-sm p-6">
             <div class="flex items-center justify-between">
               <h3 class="font-medium text-slate-800">Total Barbershops</h3>
@@ -130,11 +131,11 @@
             <p class="text-3xl font-bold text-slate-800 mt-4">5</p>
             <p class="text-sm text-slate-600 mt-1">Running campaigns</p>
           </div>
-        </div>
+          </div>
 
-        <!-- Latest Activity -->
-        <div class="bg-white rounded-xl shadow-sm p-6">
-          <h2 class="text-xl font-bold text-slate-800 mb-4">Latest Activity</h2>
+          <!-- Latest Activity -->
+          <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+            <h2 class="text-xl font-bold text-slate-800 mb-4">Latest Activity</h2>
           <div class="space-y-4">
             <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-lg">
               <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">🏢</div>
@@ -161,92 +162,10 @@
               </div>
             </div>
           </div>
-        </div>
-        <!-- Navbar -->
-        <header
-          class="flex justify-between items-center bg-white shadow-sm rounded-xl p-4 mb-6"
-        >
-          <h2 class="text-xl font-semibold">Dashboard Overview</h2>
-          <div class="relative">
-            <button
-              class="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 px-3 py-2 rounded-lg transition-all duration-200"
-            >
-              <span class="font-medium">Admin User</span>
-              <svg
-                class="w-4 h-4 text-slate-600"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </button>
-          </div>
-        </header>
 
-        <!-- Dashboard Stats -->
-        <section
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
-        >
-          <div
-            class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
-          >
-            <h3 class="text-slate-500 text-sm font-medium">
-              Total Barbershops
-            </h3>
-            <p class="text-3xl font-bold text-blue-600 mt-2">42</p>
-          </div>
-          <div
-            class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
-          >
-            <h3 class="text-slate-500 text-sm font-medium">Total Admins</h3>
-            <p class="text-3xl font-bold text-blue-600 mt-2">12</p>
-          </div>
-          <div
-            class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
-          >
-            <h3 class="text-slate-500 text-sm font-medium">
-              Total Reservations
-            </h3>
-            <p class="text-3xl font-bold text-blue-600 mt-2">318</p>
-          </div>
-        </section>
-
-        <!-- Reports Section -->
-        <section class="bg-white p-6 rounded-xl shadow-md mb-8">
-          <h3 class="text-lg font-semibold mb-4">Reports Summary</h3>
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center text-slate-600"
-          >
-            <div
-              class="border rounded-xl p-6 hover:shadow-md transition-all duration-200"
-            >
-              <div class="text-4xl mb-2">📈</div>
-              <p class="font-semibold text-slate-700">Monthly Growth Chart</p>
-              <div class="h-32 bg-slate-100 rounded-lg mt-3 flex items-center justify-center text-slate-400">
-                Chart Placeholder
-              </div>
-            </div>
-            <div
-              class="border rounded-xl p-6 hover:shadow-md transition-all duration-200"
-            >
-              <div class="text-4xl mb-2">💰</div>
-              <p class="font-semibold text-slate-700">Revenue Overview</p>
-              <div class="h-32 bg-slate-100 rounded-lg mt-3 flex items-center justify-center text-slate-400">
-                Chart Placeholder
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Table of Admins -->
-        <section class="bg-white p-6 rounded-xl shadow-md">
-          <h3 class="text-lg font-semibold mb-4">Recent Barbershop Activity</h3>
+          <!-- Recent Activity Table -->
+          <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-lg font-semibold mb-4">Recent Barbershop Activity</h3>
           <div class="overflow-x-auto">
             <table class="min-w-full text-sm text-left">
               <thead class="bg-slate-100 text-slate-600 uppercase">
@@ -320,8 +239,9 @@
               </tbody>
             </table>
           </div>
-        </section>
-      </main>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

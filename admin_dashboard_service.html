@@ -10,12 +10,12 @@
     <!-- Sidebar + Main Layout -->
     <div class="flex min-h-screen">
       <!-- Sidebar -->
-      <aside class="w-64 bg-white shadow-sm fixed inset-y-0 left-0">
-        <div class="flex items-center justify-center h-16 border-b">
+      <aside class="w-64 bg-white shadow-md flex flex-col fixed inset-y-0">
+        <div class="p-6 border-b">
           <h1 class="text-2xl font-bold text-blue-600">BarberGO</h1>
+          <p class="text-sm text-slate-500 mt-1">Admin Panel</p>
         </div>
-        <nav class="mt-6">
-          <ul class="space-y-1 px-4">
+        <nav class="flex-1 p-4 space-y-2">
             <li>
               <a
                 href="admin_dashboard.html"
@@ -86,45 +86,26 @@
       </aside>
 
       <!-- Main Content -->
-      <main class="flex-1 ml-64 p-6">
-        <!-- Header -->
-        <header
-          class="flex items-center justify-between bg-white shadow-sm p-4 rounded-xl mb-6"
-        >
-          <h2 class="text-xl font-semibold">Manage Services</h2>
-          <div class="flex items-center space-x-4">
+      <div class="flex-1 ml-64 flex flex-col min-h-screen">
+        <!-- Top Navbar -->
+        <header class="bg-white border-b px-6 py-4">
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl font-semibold text-slate-800">Manage Services</h2>
             <button
-              class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all duration-200"
+              class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200"
               id="addServiceBtn"
             >
               + Add Service
             </button>
-            <div class="relative">
-              <button
-                class="flex items-center space-x-2 text-slate-700 hover:text-blue-600"
-              >
-                <span>Admin</span>
-                <svg
-                  class="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-            </div>
           </div>
         </header>
 
-        <!-- Table Card -->
-        <section class="bg-white rounded-xl shadow-md p-4">
-          <div class="overflow-x-auto">
+        <!-- Services Content -->
+        <div class="p-6">
+          <!-- Table Card -->
+          <div class="bg-white rounded-xl shadow-sm">
+            <div class="p-6">
+              <div class="overflow-x-auto">
             <table class="w-full text-left border-collapse">
               <thead>
                 <tr class="border-b bg-slate-50 text-slate-600">
@@ -174,9 +155,11 @@
                 </tr>
               </tbody>
             </table>
+              </div>
+            </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </div>
     </div>
 
     <!-- Add Service Modal -->

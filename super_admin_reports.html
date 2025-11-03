@@ -10,64 +10,74 @@
     <!-- Sidebar + Main Layout -->
     <div class="flex min-h-screen">
       <!-- Sidebar -->
-      <aside class="w-64 bg-white shadow-sm flex flex-col">
+      <aside class="w-64 bg-white shadow-md flex flex-col fixed inset-y-0">
         <div class="p-6 border-b">
           <h1 class="text-2xl font-bold text-blue-600">BarberGO</h1>
-          <p class="text-sm text-slate-500">Super Admin</p>
+          <p class="text-sm text-slate-500 mt-1">Super Admin</p>
         </div>
         <nav class="flex-1 p-4 space-y-2">
           <a
             href="super_admin.html"
-            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
             >🏠 Dashboard</a
           >
           <a
             href="super_admin_barbers.html"
-            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
             >🏢 Manage Barbershops</a
           >
           <a
             href="super_admin_manage_admin.html"
-            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
             >👥 Manage Admins</a
           >
           <a
             href="super_admin_reports.html"
-            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            class="flex items-center px-3 py-2 rounded-lg text-blue-600 bg-blue-50 font-semibold transition-all duration-200"
             >📊 Reports</a
           >
           <div class="border-t my-4"></div>
           <a
-            href="#app-settings"
-            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            href="super_admin_settings.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
             >⚙️ App Settings</a
           >
           <a
-            href="#master-data"
-            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            href="super_admin_master_data.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
             >📁 Master Data</a
           >
           <a
-            href="#promotions"
-            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            href="super_admin_promotions.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
             >🎯 Global Promotions</a
           >
           <a
             href="#transactions"
-            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
             >💳 Transactions</a
           >
         </nav>
-        <div class="p-4 border-t">
+        <div class="border-t mt-auto">
           <button
-            class="w-full px-4 py-2 bg-slate-100 rounded-lg hover:bg-slate-200 text-slate-700 font-medium transition-all duration-200"
+            onclick="window.location.href='login.html'"
+            class="w-full flex items-center px-3 py-2 rounded-lg text-red-600 hover:bg-red-50 transition-all duration-200 m-4"
           >
             🚪 Logout
           </button>
         </div>
       </aside>
     <!-- Main Content -->
-    <main class="flex-1 p-6">
+      <div class="flex-1 ml-64 flex flex-col min-h-screen">
+        <!-- Top Navbar -->
+        <header class="bg-white border-b px-6 py-4">
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl font-semibold text-slate-800">System Reports</h2>
+          </div>
+        </header>
+
+        <!-- Reports Content -->
+        <div class="p-6">
       <!-- Header -->
       <header class="mb-6">
         <div class="flex items-center justify-between">
@@ -370,7 +380,9 @@
         <div class="bg-white rounded-xl shadow-md p-4 h-64 flex items-center justify-center text-slate-400 border border-dashed">
           <p>💰 Revenue Breakdown (Chart Placeholder)</p>
         </div>
-      </section>
+      </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>
