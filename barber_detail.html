@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BarberGO | Barbershop Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-50 text-slate-800">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+        <a href="app.html" class="flex items-center space-x-2">
+          <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">B</div>
+          <span class="font-bold text-slate-800 text-lg">BarberGO</span>
+        </a>
+
+        <div class="relative">
+          <button id="userMenuButton" class="flex items-center space-x-2 focus:outline-none hover:bg-slate-100 p-2 rounded-lg transition-all duration-200">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e" alt="User" class="w-8 h-8 rounded-full" />
+            <span class="text-slate-700">John Doe</span>
+            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="userDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-slate-200">
+            <div class="py-1">
+              <a href="customer_dashboard.html" class="block px-4 py-2 text-sm hover:bg-slate-100 transition">Dashboard</a>
+              <a href="#profile" class="block px-4 py-2 text-sm hover:bg-slate-100 transition">Profile Settings</a>
+              <a href="login.html" class="block px-4 py-2 text-sm hover:bg-slate-100 transition">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header / Banner -->
+    <header class="relative w-full h-64 bg-slate-200">
+      <img
+        src="https://via.placeholder.com/1200x400"
+        alt="Barbershop Banner"
+        class="object-cover w-full h-full"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent flex flex-col justify-end p-6 text-white"
+      >
+        <h2 class="text-3xl font-semibold">The Gentlemen's Barber</h2>
+        <div class="flex items-center mt-2 space-x-2 text-sm">
+          <span>⭐ 4.8</span>
+          <span class="text-slate-200">•</span>
+          <span>123 Barber Street, Downtown</span>
+        </div>
+        <button
+          class="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-2 rounded-lg transition-all duration-200 w-fit"
+        >
+          Book Now
+        </button>
+      </div>
+    </header>
+
+    <!-- Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <!-- Quick Info -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+              <span class="text-2xl">⌚</span>
+            </div>
+          </div>
+          <h3 class="font-semibold text-slate-800">Opening Hours</h3>
+          <p class="text-sm text-slate-600">09:00 AM - 08:00 PM</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+              <span class="text-2xl">⭐</span>
+            </div>
+          </div>
+          <h3 class="font-semibold text-slate-800">Rating</h3>
+          <p class="text-sm text-slate-600">4.8 (234 reviews)</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+              <span class="text-2xl">✂️</span>
+            </div>
+          </div>
+          <h3 class="font-semibold text-slate-800">Services</h3>
+          <p class="text-sm text-slate-600">12 services available</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+              <span class="text-2xl">👥</span>
+            </div>
+          </div>
+          <h3 class="font-semibold text-slate-800">Barbers</h3>
+          <p class="text-sm text-slate-600">5 professional barbers</p>
+        </div>
+      </div>
+
+      <!-- Services Section -->
+      <section class="bg-white rounded-xl shadow-sm mb-8">
+        <div class="p-6 border-b">
+          <h2 class="text-lg font-semibold text-slate-800">Available Services</h2>
+        </div>
+        <div class="p-6">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between p-4 border rounded-lg hover:bg-slate-50 transition-all duration-200">
+              <div>
+                <h4 class="font-semibold text-slate-800">Classic Haircut</h4>
+                <p class="text-sm text-slate-600">45 minutes</p>
+              </div>
+              <div class="text-right">
+                <p class="font-semibold text-slate-800">$25</p>
+                <button class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200">Book</button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between p-4 border rounded-lg hover:bg-slate-50 transition-all duration-200">
+              <div>
+                <h4 class="font-semibold text-slate-800">Beard Trim</h4>
+                <p class="text-sm text-slate-600">30 minutes</p>
+              </div>
+              <div class="text-right">
+                <p class="font-semibold text-slate-800">$15</p>
+                <button class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200">Book</button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between p-4 border rounded-lg hover:bg-slate-50 transition-all duration-200">
+              <div>
+                <h4 class="font-semibold text-slate-800">Hair Color</h4>
+                <p class="text-sm text-slate-600">90 minutes</p>
+              </div>
+              <div class="text-right">
+                <p class="font-semibold text-slate-800">$65</p>
+                <button class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200">Book</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Barbers Section -->
+      <section class="bg-white rounded-xl shadow-sm">
+        <div class="p-6 border-b">
+          <h2 class="text-lg font-semibold text-slate-800">Our Barbers</h2>
+        </div>
+        <div class="p-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="p-4 border rounded-lg hover:bg-slate-50 transition-all duration-200">
+              <img
+                src="https://images.unsplash.com/photo-1618077360395-f3068be8e001"
+                alt="Barber"
+                class="w-full h-48 object-cover rounded-lg mb-4"
+              />
+              <h4 class="font-semibold text-slate-800">Alex Johnson</h4>
+              <p class="text-sm text-slate-600 mb-4">Fade Specialist</p>
+              <button class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200">Book with Alex</button>
+            </div>
+
+            <div class="p-4 border rounded-lg hover:bg-slate-50 transition-all duration-200">
+              <img
+                src="https://images.unsplash.com/photo-1605497788044-5a32c7078486"
+                alt="Barber"
+                class="w-full h-48 object-cover rounded-lg mb-4"
+              />
+              <h4 class="font-semibold text-slate-800">Marcus Reed</h4>
+              <p class="text-sm text-slate-600 mb-4">Classic Cuts Expert</p>
+              <button class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200">Book with Marcus</button>
+            </div>
+
+            <div class="p-4 border rounded-lg hover:bg-slate-50 transition-all duration-200">
+              <img
+                src="https://images.unsplash.com/photo-1537960899802-ce8e150d1dd4"
+                alt="Barber"
+                class="w-full h-48 object-cover rounded-lg mb-4"
+              />
+              <h4 class="font-semibold text-slate-800">Ryan Carter</h4>
+              <p class="text-sm text-slate-600 mb-4">Beard Styling</p>
+              <button class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200">Book with Ryan</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Reviews Modal -->
+    <div id="reviewsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div class="bg-white rounded-2xl shadow-lg p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg font-semibold text-slate-800">Customer Reviews</h3>
+          <button class="text-slate-400 hover:text-slate-500" onclick="document.getElementById('reviewsModal').classList.add('hidden')">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="space-y-6">
+          <!-- Review Item -->
+          <div class="border-b pb-6">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center space-x-3">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e" alt="Reviewer" class="w-10 h-10 rounded-full" />
+                <div>
+                  <p class="font-semibold text-slate-800">John Smith</p>
+                  <p class="text-sm text-slate-600">October 15, 2025</p>
+                </div>
+              </div>
+              <div class="flex text-yellow-400">★★★★★</div>
+            </div>
+            <p class="text-slate-600">Excellent service! Alex did an amazing job with my fade. Very detailed and professional.</p>
+          </div>
+          
+          <!-- Review Item -->
+          <div class="border-b pb-6">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center space-x-3">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" alt="Reviewer" class="w-10 h-10 rounded-full" />
+                <div>
+                  <p class="font-semibold text-slate-800">Sarah Johnson</p>
+                  <p class="text-sm text-slate-600">October 12, 2025</p>
+                </div>
+              </div>
+              <div class="flex text-yellow-400">★★★★★</div>
+            </div>
+            <p class="text-slate-600">Great atmosphere and friendly staff. Marcus really knows how to give a perfect classic cut.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fixed Bottom Button (Mobile Only) -->
+    <div
+      class="fixed bottom-0 left-0 w-full bg-white shadow-md p-4 md:hidden"
+    >
+      <a href="reservation.html"
+        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition-all duration-200"
+      >
+        Book Now
+      </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BarberGO | Operating Hours</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-50 text-slate-800">
+    <!-- Sidebar + Main Layout -->
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-white shadow-md flex flex-col fixed inset-y-0">
+        <div class="p-6 border-b">
+          <h1 class="text-2xl font-bold text-blue-600">BarberGO</h1>
+          <p class="text-sm text-slate-500 mt-1">Admin Panel</p>
+        </div>
+        <nav class="flex-1 p-4 space-y-2">
+          <a
+            href="admin_dashboard.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >🏠 Dashboard</a
+          >
+          <a
+            href="admin_dashboard_profile.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >🏢 Barbershop Profile</a
+          >
+          <a
+            href="admin_dashboard_service.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >✂️ Services</a
+          >
+          <a
+            href="admin_dashboard_barbers.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >👥 Barbers</a
+          >
+          <a
+            href="admin_dashboard_hours.html"
+            class="flex items-center px-3 py-2 rounded-lg text-blue-600 bg-blue-50 font-semibold transition-all duration-200"
+            >🕒 Operating Hours</a
+          >
+          <a
+            href="admin_dashboard_promotions.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >🎯 Promotions</a
+          >
+          <div class="border-t my-4"></div>
+          <a
+            href="admin_dashboard_reservations.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >📅 Reservations</a
+          >
+          <a
+            href="admin_dashboard_financial.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >💰 Financial Reports</a
+          >
+          <div class="border-t my-4"></div>
+          <button
+            onclick="window.location.href='login.html'"
+            class="w-full flex items-center px-3 py-2 rounded-lg text-red-600 hover:bg-red-50 transition-all duration-200"
+            >🚪 Logout</button
+          >
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="flex-1 ml-64 flex flex-col min-h-screen">
+        <!-- Top Navbar -->
+        <header class="bg-white border-b px-6 py-4">
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl font-semibold text-slate-800">Operating Hours</h2>
+            <button
+              class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200"
+              onclick="saveSchedule()"
+            >
+              Save Changes
+            </button>
+          </div>
+        </header>
+
+        <!-- Schedule Content -->
+        <div class="p-6">
+          <div class="bg-white rounded-xl shadow-sm">
+            <div class="p-6 border-b">
+              <h3 class="text-lg font-semibold text-slate-800">Weekly Schedule</h3>
+              <p class="text-sm text-slate-600">Set your barbershop's operating hours for each day</p>
+            </div>
+            <div class="p-6">
+              <div class="space-y-6">
+                <!-- Monday -->
+                <div class="flex items-start space-x-4">
+                  <div class="w-32">
+                    <label class="text-sm font-medium text-slate-700">Monday</label>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center space-x-4">
+                      <label class="inline-flex items-center">
+                        <input type="checkbox" class="form-checkbox text-blue-600" checked />
+                        <span class="ml-2">Open</span>
+                      </label>
+                      <div class="flex items-center space-x-2">
+                        <input type="time" value="09:00" class="px-3 py-2 border rounded-lg" />
+                        <span>to</span>
+                        <input type="time" value="18:00" class="px-3 py-2 border rounded-lg" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tuesday -->
+                <div class="flex items-start space-x-4">
+                  <div class="w-32">
+                    <label class="text-sm font-medium text-slate-700">Tuesday</label>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center space-x-4">
+                      <label class="inline-flex items-center">
+                        <input type="checkbox" class="form-checkbox text-blue-600" checked />
+                        <span class="ml-2">Open</span>
+                      </label>
+                      <div class="flex items-center space-x-2">
+                        <input type="time" value="09:00" class="px-3 py-2 border rounded-lg" />
+                        <span>to</span>
+                        <input type="time" value="18:00" class="px-3 py-2 border rounded-lg" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Wednesday -->
+                <div class="flex items-start space-x-4">
+                  <div class="w-32">
+                    <label class="text-sm font-medium text-slate-700">Wednesday</label>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center space-x-4">
+                      <label class="inline-flex items-center">
+                        <input type="checkbox" class="form-checkbox text-blue-600" checked />
+                        <span class="ml-2">Open</span>
+                      </label>
+                      <div class="flex items-center space-x-2">
+                        <input type="time" value="09:00" class="px-3 py-2 border rounded-lg" />
+                        <span>to</span>
+                        <input type="time" value="18:00" class="px-3 py-2 border rounded-lg" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Thursday -->
+                <div class="flex items-start space-x-4">
+                  <div class="w-32">
+                    <label class="text-sm font-medium text-slate-700">Thursday</label>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center space-x-4">
+                      <label class="inline-flex items-center">
+                        <input type="checkbox" class="form-checkbox text-blue-600" checked />
+                        <span class="ml-2">Open</span>
+                      </label>
+                      <div class="flex items-center space-x-2">
+                        <input type="time" value="09:00" class="px-3 py-2 border rounded-lg" />
+                        <span>to</span>
+                        <input type="time" value="18:00" class="px-3 py-2 border rounded-lg" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Friday -->
+                <div class="flex items-start space-x-4">
+                  <div class="w-32">
+                    <label class="text-sm font-medium text-slate-700">Friday</label>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center space-x-4">
+                      <label class="inline-flex items-center">
+                        <input type="checkbox" class="form-checkbox text-blue-600" checked />
+                        <span class="ml-2">Open</span>
+                      </label>
+                      <div class="flex items-center space-x-2">
+                        <input type="time" value="09:00" class="px-3 py-2 border rounded-lg" />
+                        <span>to</span>
+                        <input type="time" value="18:00" class="px-3 py-2 border rounded-lg" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Saturday -->
+                <div class="flex items-start space-x-4">
+                  <div class="w-32">
+                    <label class="text-sm font-medium text-slate-700">Saturday</label>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center space-x-4">
+                      <label class="inline-flex items-center">
+                        <input type="checkbox" class="form-checkbox text-blue-600" checked />
+                        <span class="ml-2">Open</span>
+                      </label>
+                      <div class="flex items-center space-x-2">
+                        <input type="time" value="10:00" class="px-3 py-2 border rounded-lg" />
+                        <span>to</span>
+                        <input type="time" value="16:00" class="px-3 py-2 border rounded-lg" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Sunday -->
+                <div class="flex items-start space-x-4">
+                  <div class="w-32">
+                    <label class="text-sm font-medium text-slate-700">Sunday</label>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center space-x-4">
+                      <label class="inline-flex items-center">
+                        <input type="checkbox" class="form-checkbox text-blue-600" />
+                        <span class="ml-2">Open</span>
+                      </label>
+                      <div class="flex items-center space-x-2">
+                        <input type="time" value="10:00" class="px-3 py-2 border rounded-lg" disabled />
+                        <span>to</span>
+                        <input type="time" value="16:00" class="px-3 py-2 border rounded-lg" disabled />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Basic JavaScript for form handling -->
+    <script>
+      function saveSchedule() {
+        // Add your save logic here
+        alert('Schedule saved successfully!');
+      }
+
+      // Enable/disable time inputs based on checkbox state
+      document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+          const timeInputs = this.closest('.flex-1').querySelectorAll('input[type="time"]');
+          timeInputs.forEach(input => {
+            input.disabled = !this.checked;
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

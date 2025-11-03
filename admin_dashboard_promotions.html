@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BarberGO | Promotions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-50 text-slate-800">
+    <!-- Sidebar + Main Layout -->
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-white shadow-md flex flex-col fixed inset-y-0">
+        <div class="p-6 border-b">
+          <h1 class="text-2xl font-bold text-blue-600">BarberGO</h1>
+          <p class="text-sm text-slate-500 mt-1">Admin Panel</p>
+        </div>
+        <nav class="flex-1 p-4 space-y-2">
+          <a
+            href="admin_dashboard.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >🏠 Dashboard</a
+          >
+          <a
+            href="admin_dashboard_profile.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >🏢 Barbershop Profile</a
+          >
+          <a
+            href="admin_dashboard_service.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >✂️ Services</a
+          >
+          <a
+            href="admin_dashboard_barbers.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >👥 Barbers</a
+          >
+          <a
+            href="admin_dashboard_hours.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >🕒 Operating Hours</a
+          >
+          <a
+            href="admin_dashboard_promotions.html"
+            class="flex items-center px-3 py-2 rounded-lg text-blue-600 bg-blue-50 font-semibold transition-all duration-200"
+            >🎯 Promotions</a
+          >
+          <div class="border-t my-4"></div>
+          <a
+            href="admin_dashboard_reservations.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >📅 Reservations</a
+          >
+          <a
+            href="admin_dashboard_financial.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >💰 Financial Reports</a
+          >
+          <div class="border-t my-4"></div>
+          <button
+            onclick="window.location.href='login.html'"
+            class="w-full flex items-center px-3 py-2 rounded-lg text-red-600 hover:bg-red-50 transition-all duration-200"
+            >🚪 Logout</button
+          >
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="flex-1 ml-64 flex flex-col min-h-screen">
+        <!-- Top Navbar -->
+        <header class="bg-white border-b px-6 py-4">
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl font-semibold text-slate-800">Promotions</h2>
+            <button
+              class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200"
+              onclick="document.getElementById('addPromotionModal').classList.remove('hidden')"
+            >
+              + Add Promotion
+            </button>
+          </div>
+        </header>
+
+        <!-- Promotions Content -->
+        <div class="p-6">
+          <!-- Active Promotions -->
+          <div class="bg-white rounded-xl shadow-sm mb-6">
+            <div class="p-6 border-b">
+              <h3 class="text-lg font-semibold text-slate-800">Active Promotions</h3>
+              <p class="text-sm text-slate-600">Currently running promotional offers</p>
+            </div>
+            <div class="p-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Example Promotion Card -->
+                <div class="border rounded-lg p-4 hover:shadow-md transition-all duration-200">
+                  <div class="flex justify-between items-start mb-4">
+                    <div>
+                      <h4 class="font-semibold text-lg">Early Bird Special</h4>
+                      <p class="text-sm text-slate-600">20% off before 11 AM</p>
+                    </div>
+                    <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Active</span>
+                  </div>
+                  <div class="space-y-2 mb-4">
+                    <p class="text-sm"><span class="font-medium">Valid until:</span> Dec 31, 2025</p>
+                    <p class="text-sm"><span class="font-medium">Used:</span> 45 times</p>
+                  </div>
+                  <div class="flex justify-end space-x-2">
+                    <button class="px-3 py-1 text-blue-600 hover:bg-blue-50 rounded">Edit</button>
+                    <button class="px-3 py-1 text-red-600 hover:bg-red-50 rounded">End</button>
+                  </div>
+                </div>
+
+                <!-- More promotion cards would go here -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Promotions -->
+          <div class="bg-white rounded-xl shadow-sm mb-6">
+            <div class="p-6 border-b">
+              <h3 class="text-lg font-semibold text-slate-800">Upcoming Promotions</h3>
+              <p class="text-sm text-slate-600">Scheduled promotional offers</p>
+            </div>
+            <div class="p-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Example Upcoming Promotion -->
+                <div class="border rounded-lg p-4 hover:shadow-md transition-all duration-200">
+                  <div class="flex justify-between items-start mb-4">
+                    <div>
+                      <h4 class="font-semibold text-lg">Holiday Special</h4>
+                      <p class="text-sm text-slate-600">15% off all services</p>
+                    </div>
+                    <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">Upcoming</span>
+                  </div>
+                  <div class="space-y-2 mb-4">
+                    <p class="text-sm"><span class="font-medium">Starts:</span> Dec 1, 2025</p>
+                    <p class="text-sm"><span class="font-medium">Ends:</span> Dec 25, 2025</p>
+                  </div>
+                  <div class="flex justify-end space-x-2">
+                    <button class="px-3 py-1 text-blue-600 hover:bg-blue-50 rounded">Edit</button>
+                    <button class="px-3 py-1 text-red-600 hover:bg-red-50 rounded">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Promotion Modal -->
+    <div id="addPromotionModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div class="bg-white rounded-2xl shadow-lg p-6 w-full max-w-md">
+        <h3 class="text-lg font-semibold mb-4">Add New Promotion</h3>
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">Promotion Name</label>
+            <input type="text" class="w-full px-3 py-2 border rounded-lg" required />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Description</label>
+            <textarea class="w-full px-3 py-2 border rounded-lg" rows="2" required></textarea>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium mb-1">Start Date</label>
+              <input type="date" class="w-full px-3 py-2 border rounded-lg" required />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1">End Date</label>
+              <input type="date" class="w-full px-3 py-2 border rounded-lg" required />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Discount Type</label>
+            <select class="w-full px-3 py-2 border rounded-lg">
+              <option>Percentage Discount</option>
+              <option>Fixed Amount Discount</option>
+              <option>Buy One Get One</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Discount Value</label>
+            <input type="number" class="w-full px-3 py-2 border rounded-lg" required />
+          </div>
+          <div class="flex justify-end space-x-2 pt-4">
+            <button
+              type="button"
+              class="px-4 py-2 text-slate-600 bg-slate-100 rounded-lg hover:bg-slate-200"
+              onclick="document.getElementById('addPromotionModal').classList.add('hidden')"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+              Create Promotion
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

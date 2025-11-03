@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BarberGO - Customer Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-50 text-slate-700 min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+        <a href="app.html" class="flex items-center space-x-2">
+          <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">B</div>
+          <span class="font-bold text-slate-800 text-lg">BarberGO</span>
+        </a>
+
+        <div class="relative">
+          <button id="userMenuButton" class="flex items-center space-x-2 focus:outline-none hover:bg-slate-100 p-2 rounded-lg transition-all duration-200">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e" alt="User" class="w-8 h-8 rounded-full" />
+            <span class="text-slate-700">John Doe</span>
+            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="userDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-slate-200">
+            <div class="py-1">
+              <a href="#profile" class="block px-4 py-2 text-sm hover:bg-slate-100 transition">Profile Settings</a>
+              <a href="login.html" class="block px-4 py-2 text-sm hover:bg-slate-100 transition">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6">
+      <!-- Dashboard Header -->
+      <div class="mb-8">
+        <h1 class="text-2xl font-bold text-slate-800">My Dashboard</h1>
+        <p class="text-slate-600">Manage your reservations and reviews</p>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <a href="app.html" class="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-all duration-200">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+              <span class="text-2xl">🔍</span>
+            </div>
+          </div>
+          <h3 class="font-semibold text-slate-800">Find Barbershop</h3>
+          <p class="text-sm text-slate-600">Search and book new appointments</p>
+        </a>
+
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+              <span class="text-2xl">📅</span>
+            </div>
+          </div>
+          <h3 class="font-semibold text-slate-800">Active Bookings</h3>
+          <p class="text-sm text-slate-600">2 upcoming appointments</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+              <span class="text-2xl">⭐</span>
+            </div>
+          </div>
+          <h3 class="font-semibold text-slate-800">Reviews Given</h3>
+          <p class="text-sm text-slate-600">12 reviews</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+              <span class="text-2xl">💈</span>
+            </div>
+          </div>
+          <h3 class="font-semibold text-slate-800">Total Visits</h3>
+          <p class="text-sm text-slate-600">25 haircuts</p>
+        </div>
+      </div>
+
+      <!-- Upcoming Reservations -->
+      <section class="bg-white rounded-xl shadow-sm mb-8">
+        <div class="p-6 border-b">
+          <h2 class="text-lg font-semibold text-slate-800">Upcoming Reservations</h2>
+        </div>
+        <div class="p-6">
+          <div class="space-y-6">
+            <!-- Reservation Card -->
+            <div class="flex items-center justify-between p-4 border rounded-lg">
+              <div class="flex items-center space-x-4">
+                <div class="w-16 h-16 bg-slate-100 rounded-lg flex-shrink-0">
+                  <img
+                    src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70"
+                    alt="Barbershop"
+                    class="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-slate-800">Gentlemen's Cut</h3>
+                  <p class="text-slate-600">Classic Haircut • Today, 2:00 PM</p>
+                  <span class="text-blue-600 text-sm">Confirmed</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <button class="px-4 py-2 border rounded-lg text-slate-700 hover:bg-slate-50">Reschedule</button>
+                <button class="px-4 py-2 border border-red-200 text-red-600 rounded-lg hover:bg-red-50">Cancel</button>
+              </div>
+            </div>
+
+            <!-- Another Reservation -->
+            <div class="flex items-center justify-between p-4 border rounded-lg">
+              <div class="flex items-center space-x-4">
+                <div class="w-16 h-16 bg-slate-100 rounded-lg flex-shrink-0">
+                  <img
+                    src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1"
+                    alt="Barbershop"
+                    class="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-slate-800">Modern Barbers</h3>
+                  <p class="text-slate-600">Beard Trim • Tomorrow, 11:00 AM</p>
+                  <span class="text-yellow-600 text-sm">Pending Confirmation</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <button class="px-4 py-2 border border-red-200 text-red-600 rounded-lg hover:bg-red-50">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Past Reservations & Reviews -->
+      <section class="bg-white rounded-xl shadow-sm">
+        <div class="p-6 border-b">
+          <h2 class="text-lg font-semibold text-slate-800">Past Reservations & Reviews</h2>
+        </div>
+        <div class="p-6">
+          <div class="space-y-6">
+            <!-- Past Visit with Review -->
+            <div class="flex items-center justify-between p-4 border rounded-lg">
+              <div class="flex items-center space-x-4">
+                <div class="w-16 h-16 bg-slate-100 rounded-lg flex-shrink-0">
+                  <img
+                    src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70"
+                    alt="Barbershop"
+                    class="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-slate-800">Gentlemen's Cut</h3>
+                  <p class="text-slate-600">Classic Haircut • Oct 25, 2025</p>
+                  <div class="flex items-center mt-1">
+                    <div class="flex text-yellow-400">
+                      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <span class="ml-2 text-sm text-slate-600">Great service and attention to detail!</span>
+                  </div>
+                </div>
+              </div>
+              <button class="px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg">Edit Review</button>
+            </div>
+
+            <!-- Past Visit without Review -->
+            <div class="flex items-center justify-between p-4 border rounded-lg">
+              <div class="flex items-center space-x-4">
+                <div class="w-16 h-16 bg-slate-100 rounded-lg flex-shrink-0">
+                  <img
+                    src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1"
+                    alt="Barbershop"
+                    class="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-slate-800">Modern Barbers</h3>
+                  <p class="text-slate-600">Hair Color • Oct 20, 2025</p>
+                  <span class="text-slate-600 text-sm">Review pending</span>
+                </div>
+              </div>
+              <button 
+                class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                onclick="document.getElementById('reviewModal').classList.remove('hidden')"
+              >
+                Leave Review
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Review Modal -->
+    <div id="reviewModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div class="bg-white rounded-2xl shadow-lg p-6 w-full max-w-md">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg font-semibold text-slate-800">Write a Review</h3>
+          <button 
+            class="text-slate-400 hover:text-slate-500"
+            onclick="document.getElementById('reviewModal').classList.add('hidden')"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-1">Rating</label>
+            <div class="flex space-x-2">
+              <button type="button" class="text-2xl text-yellow-400">★</button>
+              <button type="button" class="text-2xl text-yellow-400">★</button>
+              <button type="button" class="text-2xl text-yellow-400">★</button>
+              <button type="button" class="text-2xl text-yellow-400">★</button>
+              <button type="button" class="text-2xl text-slate-300">★</button>
+            </div>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-1">Your Review</label>
+            <textarea
+              rows="4"
+              placeholder="Share your experience..."
+              class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            ></textarea>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-1">Add Photos (optional)</label>
+            <input
+              type="file"
+              accept="image/*"
+              multiple
+              class="w-full p-2 border border-slate-300 rounded-lg text-slate-600"
+            />
+          </div>
+          
+          <div class="flex justify-end gap-2 pt-4">
+            <button
+              type="button"
+              class="px-4 py-2 border rounded-lg hover:bg-slate-50"
+              onclick="document.getElementById('reviewModal').classList.add('hidden')"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+            >
+              Post Review
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Simple Dropdown Script -->
+    <script>
+      const userMenuButton = document.getElementById('userMenuButton');
+      const userDropdown = document.getElementById('userDropdown');
+
+      userMenuButton.addEventListener('click', () => {
+        userDropdown.classList.toggle('hidden');
+      });
+
+      window.addEventListener('click', (e) => {
+        if (!userMenuButton.contains(e.target)) {
+          userDropdown.classList.add('hidden');
+        }
+      });
+    </script>
+  </body>
+</html>

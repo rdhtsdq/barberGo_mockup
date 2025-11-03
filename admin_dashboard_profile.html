@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BarberGO | Barbershop Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-50 text-slate-800">
+    <!-- Sidebar + Main Layout -->
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-white shadow-md flex flex-col fixed inset-y-0">
+        <div class="p-6 border-b">
+          <h1 class="text-2xl font-bold text-blue-600">BarberGO</h1>
+          <p class="text-sm text-slate-500 mt-1">Admin Panel</p>
+        </div>
+        <nav class="flex-1 p-4 space-y-2">
+          <a
+            href="admin_dashboard.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >🏠 Dashboard</a
+          >
+          <a
+            href="admin_dashboard_profile.html"
+            class="flex items-center px-3 py-2 rounded-lg text-blue-600 bg-blue-50 font-semibold transition-all duration-200"
+            >🏢 Barbershop Profile</a
+          >
+          <a
+            href="admin_dashboard_service.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >✂️ Services</a
+          >
+          <a
+            href="admin_dashboard_barbers.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >👥 Barbers</a
+          >
+          <a
+            href="admin_dashboard_hours.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >🕒 Operating Hours</a
+          >
+          <a
+            href="admin_dashboard_promotions.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >🎯 Promotions</a
+          >
+          <div class="border-t my-4"></div>
+          <a
+            href="admin_dashboard_reservations.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >📅 Reservations</a
+          >
+          <a
+            href="admin_dashboard_financial.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >💰 Financial Reports</a
+          >
+          <div class="border-t my-4"></div>
+          <button
+            onclick="window.location.href='login.html'"
+            class="w-full flex items-center px-3 py-2 rounded-lg text-red-600 hover:bg-red-50 transition-all duration-200"
+            >🚪 Logout</button
+          >
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="flex-1 ml-64 flex flex-col min-h-screen">
+        <!-- Top Navbar -->
+        <header class="bg-white border-b px-6 py-4">
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl font-semibold text-slate-800">Barbershop Profile</h2>
+            <button
+              class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200"
+            >
+              Save Changes
+            </button>
+          </div>
+        </header>
+
+        <!-- Profile Content -->
+        <div class="p-6">
+          <!-- Basic Information -->
+          <div class="bg-white rounded-xl shadow-sm mb-6">
+            <div class="p-6 border-b">
+              <h3 class="text-lg font-semibold text-slate-800">Basic Information</h3>
+              <p class="text-sm text-slate-600">Update your barbershop's basic details</p>
+            </div>
+            <div class="p-6 space-y-6">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-2">Barbershop Name</label>
+                  <input
+                    type="text"
+                    value="John's Barbershop"
+                    class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-2">Contact Email</label>
+                  <input
+                    type="email"
+                    value="contact@johnsbarbershop.com"
+                    class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
+                  <input
+                    type="tel"
+                    value="+1234567890"
+                    class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-2">Website</label>
+                  <input
+                    type="url"
+                    value="https://johnsbarbershop.com"
+                    class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="bg-white rounded-xl shadow-sm mb-6">
+            <div class="p-6 border-b">
+              <h3 class="text-lg font-semibold text-slate-800">Location</h3>
+              <p class="text-sm text-slate-600">Set your barbershop's address</p>
+            </div>
+            <div class="p-6 space-y-6">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="lg:col-span-2">
+                  <label class="block text-sm font-medium text-slate-700 mb-2">Street Address</label>
+                  <input
+                    type="text"
+                    value="123 Main Street"
+                    class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-2">City</label>
+                  <input
+                    type="text"
+                    value="Jakarta"
+                    class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-2">Area</label>
+                  <select
+                    class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  >
+                    <option>Jakarta Selatan</option>
+                    <option>Jakarta Pusat</option>
+                    <option>Jakarta Barat</option>
+                    <option>Jakarta Timur</option>
+                    <option>Jakarta Utara</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="bg-white rounded-xl shadow-sm mb-6">
+            <div class="p-6 border-b">
+              <h3 class="text-lg font-semibold text-slate-800">Description</h3>
+              <p class="text-sm text-slate-600">Tell customers about your barbershop</p>
+            </div>
+            <div class="p-6">
+              <textarea
+                rows="4"
+                class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >Welcome to John's Barbershop, where style meets tradition. Our experienced barbers provide top-notch haircuts and grooming services in a comfortable, modern setting.</textarea>
+            </div>
+          </div>
+
+          <!-- Photos -->
+          <div class="bg-white rounded-xl shadow-sm mb-6">
+            <div class="p-6 border-b">
+              <h3 class="text-lg font-semibold text-slate-800">Photos</h3>
+              <p class="text-sm text-slate-600">Add photos of your barbershop</p>
+            </div>
+            <div class="p-6">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="border-2 border-dashed border-slate-300 rounded-lg p-4 text-center">
+                  <div class="flex flex-col items-center justify-center h-40">
+                    <button class="text-2xl text-slate-400">➕</button>
+                    <p class="mt-2 text-sm text-slate-600">Add Photo</p>
+                  </div>
+                </div>
+                <!-- Example photos would go here -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Media -->
+          <div class="bg-white rounded-xl shadow-sm">
+            <div class="p-6 border-b">
+              <h3 class="text-lg font-semibold text-slate-800">Social Media</h3>
+              <p class="text-sm text-slate-600">Connect your social media accounts</p>
+            </div>
+            <div class="p-6 space-y-6">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-2">Instagram</label>
+                  <input
+                    type="text"
+                    value="@johnsbarbershop"
+                    class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-2">Facebook</label>
+                  <input
+                    type="text"
+                    value="facebook.com/johnsbarbershop"
+                    class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

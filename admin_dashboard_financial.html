@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BarberGO | Financial Reports</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="bg-slate-50 text-slate-800">
+    <!-- Sidebar + Main Layout -->
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-white shadow-md flex flex-col fixed inset-y-0">
+        <div class="p-6 border-b">
+          <h1 class="text-2xl font-bold text-blue-600">BarberGO</h1>
+          <p class="text-sm text-slate-500 mt-1">Admin Panel</p>
+        </div>
+        <nav class="flex-1 p-4 space-y-2">
+          <a
+            href="admin_dashboard.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >🏠 Dashboard</a
+          >
+          <a
+            href="admin_dashboard_profile.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >🏢 Barbershop Profile</a
+          >
+          <a
+            href="admin_dashboard_service.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >✂️ Services</a
+          >
+          <a
+            href="admin_dashboard_barbers.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >👥 Barbers</a
+          >
+          <a
+            href="admin_dashboard_hours.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >🕒 Operating Hours</a
+          >
+          <a
+            href="admin_dashboard_promotions.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >🎯 Promotions</a
+          >
+          <div class="border-t my-4"></div>
+          <a
+            href="admin_dashboard_reservations.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >📅 Reservations</a
+          >
+          <a
+            href="admin_dashboard_financial.html"
+            class="flex items-center px-3 py-2 rounded-lg text-blue-600 bg-blue-50 font-semibold transition-all duration-200"
+            >💰 Financial Reports</a
+          >
+          <div class="border-t my-4"></div>
+          <button
+            onclick="window.location.href='login.html'"
+            class="w-full flex items-center px-3 py-2 rounded-lg text-red-600 hover:bg-red-50 transition-all duration-200"
+            >🚪 Logout</button
+          >
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="flex-1 ml-64 flex flex-col min-h-screen">
+        <!-- Top Navbar -->
+        <header class="bg-white border-b px-6 py-4">
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl font-semibold text-slate-800">Financial Reports</h2>
+            <div class="flex items-center space-x-4">
+              <select class="px-3 py-2 border rounded-lg">
+                <option>Last 7 Days</option>
+                <option>Last 30 Days</option>
+                <option>This Month</option>
+                <option>Last Month</option>
+                <option>Custom Range</option>
+              </select>
+              <button
+                class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200"
+              >
+                Export Report
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Financial Content -->
+        <div class="p-6">
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+            <!-- Total Revenue -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+              <h3 class="text-sm font-medium text-slate-600 mb-4">Total Revenue</h3>
+              <p class="text-3xl font-bold text-slate-800">Rp 12.5M</p>
+              <div class="mt-4 flex items-center text-sm text-green-600">
+                <span class="font-medium">↑ 12%</span>
+                <span class="ml-1">vs last period</span>
+              </div>
+            </div>
+
+            <!-- Total Services -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+              <h3 class="text-sm font-medium text-slate-600 mb-4">Total Services</h3>
+              <p class="text-3xl font-bold text-slate-800">248</p>
+              <div class="mt-4 flex items-center text-sm text-green-600">
+                <span class="font-medium">↑ 8%</span>
+                <span class="ml-1">vs last period</span>
+              </div>
+            </div>
+
+            <!-- Average Service Value -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+              <h3 class="text-sm font-medium text-slate-600 mb-4">Avg. Service Value</h3>
+              <p class="text-3xl font-bold text-slate-800">Rp 50K</p>
+              <div class="mt-4 flex items-center text-sm text-green-600">
+                <span class="font-medium">↑ 3%</span>
+                <span class="ml-1">vs last period</span>
+              </div>
+            </div>
+
+            <!-- Total Promotions Value -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+              <h3 class="text-sm font-medium text-slate-600 mb-4">Promotions Value</h3>
+              <p class="text-3xl font-bold text-slate-800">Rp 1.2M</p>
+              <div class="mt-4 flex items-center text-sm text-red-600">
+                <span class="font-medium">↓ 5%</span>
+                <span class="ml-1">vs last period</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Revenue Chart -->
+          <div class="bg-white rounded-xl shadow-sm mb-6">
+            <div class="p-6 border-b">
+              <h3 class="text-lg font-semibold text-slate-800">Revenue Trends</h3>
+              <p class="text-sm text-slate-600">Daily revenue over time</p>
+            </div>
+            <div class="p-6">
+              <canvas id="revenueChart" height="200"></canvas>
+            </div>
+          </div>
+
+          <!-- Two Column Layout -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Popular Services -->
+            <div class="bg-white rounded-xl shadow-sm">
+              <div class="p-6 border-b">
+                <h3 class="text-lg font-semibold text-slate-800">Popular Services</h3>
+                <p class="text-sm text-slate-600">Revenue by service type</p>
+              </div>
+              <div class="p-6">
+                <canvas id="servicesChart" height="250"></canvas>
+              </div>
+            </div>
+
+            <!-- Daily Stats -->
+            <div class="bg-white rounded-xl shadow-sm">
+              <div class="p-6 border-b">
+                <h3 class="text-lg font-semibold text-slate-800">Daily Performance</h3>
+                <p class="text-sm text-slate-600">Revenue by day of week</p>
+              </div>
+              <div class="p-6">
+                <canvas id="dailyChart" height="250"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts Initialization -->
+    <script>
+      // Revenue Chart
+      const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+      new Chart(revenueCtx, {
+        type: 'line',
+        data: {
+          labels: ['1 Nov', '2 Nov', '3 Nov', '4 Nov', '5 Nov', '6 Nov', '7 Nov'],
+          datasets: [{
+            label: 'Revenue',
+            data: [1200000, 1500000, 1300000, 1800000, 1600000, 2000000, 1900000],
+            borderColor: '#2563eb',
+            backgroundColor: 'rgba(37, 99, 235, 0.1)',
+            fill: true,
+            tension: 0.4
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false
+        }
+      });
+
+      // Services Chart
+      const servicesCtx = document.getElementById('servicesChart').getContext('2d');
+      new Chart(servicesCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Haircut', 'Beard Trim', 'Hair Color', 'Styling', 'Other'],
+          datasets: [{
+            data: [45, 25, 15, 10, 5],
+            backgroundColor: [
+              '#2563eb',
+              '#3b82f6',
+              '#60a5fa',
+              '#93c5fd',
+              '#bfdbfe'
+            ]
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false
+        }
+      });
+
+      // Daily Chart
+      const dailyCtx = document.getElementById('dailyChart').getContext('2d');
+      new Chart(dailyCtx, {
+        type: 'bar',
+        data: {
+          labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          datasets: [{
+            label: 'Average Revenue',
+            data: [1500000, 1800000, 1600000, 1700000, 2000000, 2500000, 1000000],
+            backgroundColor: '#2563eb'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false
+        }
+      });
+    </script>
+  </body>
+</html>

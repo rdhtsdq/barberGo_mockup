@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BarberGO — Global Promotions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-50 text-slate-800 min-h-screen">
+    <!-- Sidebar + Main Layout -->
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-white shadow-sm flex flex-col">
+        <div class="p-6 border-b">
+          <h1 class="text-2xl font-bold text-blue-600">BarberGO</h1>
+          <p class="text-sm text-slate-500">Super Admin</p>
+        </div>
+        <nav class="flex-1 p-4 space-y-2">
+          <a
+            href="super_admin.html"
+            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            >🏠 Dashboard</a
+          >
+          <a
+            href="super_admin_barbers.html"
+            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            >🏢 Manage Barbershops</a
+          >
+          <a
+            href="super_admin_manage_admin.html"
+            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            >👥 Manage Admins</a
+          >
+          <a
+            href="super_admin_reports.html"
+            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            >📊 Reports</a
+          >
+          <div class="border-t my-4"></div>
+          <a
+            href="super_admin_settings.html"
+            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            >⚙️ App Settings</a
+          >
+          <a
+            href="super_admin_master_data.html"
+            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            >📁 Master Data</a
+          >
+          <a
+            href="super_admin_promotions.html"
+            class="block px-4 py-2 rounded-lg bg-blue-50 text-blue-600 transition-all duration-200 font-medium"
+            >🎯 Global Promotions</a
+          >
+          <a
+            href="super_admin_transactions.html"
+            class="block px-4 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 font-medium"
+            >💳 Transactions</a
+          >
+        </nav>
+        <div class="p-4 border-t">
+          <button onclick="window.location.href='login.html'"
+            class="w-full px-4 py-2 bg-slate-100 rounded-lg hover:bg-slate-200 text-slate-700 font-medium transition-all duration-200"
+          >
+            🚪 Logout
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-6">
+        <!-- Header -->
+        <header class="mb-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <h1 class="text-2xl font-bold text-slate-800">Global Promotions</h1>
+              <p class="text-slate-600">Manage system-wide promotional campaigns</p>
+            </div>
+            <button
+              class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200 flex items-center gap-2"
+            >
+              <span>➕</span> Create New Promotion
+            </button>
+          </div>
+        </header>
+
+        <!-- Active Promotions -->
+        <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+          <h2 class="text-lg font-semibold text-slate-800 mb-4">Active Promotions</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Promotion Card -->
+            <div class="border rounded-lg p-4 hover:shadow-md transition-all duration-200">
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-sm">Active</span>
+                <button class="text-slate-400 hover:text-slate-600">⋮</button>
+              </div>
+              <h3 class="font-semibold text-slate-800 mb-2">New User Discount</h3>
+              <p class="text-slate-600 text-sm mb-3">20% off on first booking</p>
+              <div class="space-y-2">
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-slate-600">Code:</span>
+                  <span class="font-medium text-slate-800">WELCOME20</span>
+                </div>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-slate-600">Validity:</span>
+                  <span class="text-slate-800">Nov 1 - Dec 31, 2025</span>
+                </div>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-slate-600">Usage:</span>
+                  <span class="text-slate-800">243/500</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promotion Card -->
+            <div class="border rounded-lg p-4 hover:shadow-md transition-all duration-200">
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-sm">Active</span>
+                <button class="text-slate-400 hover:text-slate-600">⋮</button>
+              </div>
+              <h3 class="font-semibold text-slate-800 mb-2">Weekend Special</h3>
+              <p class="text-slate-600 text-sm mb-3">15% off on weekend bookings</p>
+              <div class="space-y-2">
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-slate-600">Code:</span>
+                  <span class="font-medium text-slate-800">WEEKEND15</span>
+                </div>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-slate-600">Validity:</span>
+                  <span class="text-slate-800">Every Weekend</span>
+                </div>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-slate-600">Usage:</span>
+                  <span class="text-slate-800">Unlimited</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming & Past Promotions -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Upcoming Promotions -->
+          <div class="bg-white rounded-xl shadow-sm p-6">
+            <h2 class="text-lg font-semibold text-slate-800 mb-4">Upcoming Promotions</h2>
+            <div class="space-y-4">
+              <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-lg">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600">
+                  🎄
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-medium text-slate-800">Holiday Season Special</h3>
+                  <p class="text-sm text-slate-600">25% off on all services</p>
+                  <p class="text-xs text-slate-500 mt-1">Starts Dec 1, 2025</p>
+                </div>
+                <button class="text-blue-600 hover:text-blue-700">Edit</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Past Promotions -->
+          <div class="bg-white rounded-xl shadow-sm p-6">
+            <h2 class="text-lg font-semibold text-slate-800 mb-4">Past Promotions</h2>
+            <div class="space-y-4">
+              <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-lg">
+                <div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600">
+                  🎯
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-medium text-slate-800">Back to School</h3>
+                  <p class="text-sm text-slate-600">10% off for students</p>
+                  <p class="text-xs text-slate-500 mt-1">Ended Oct 31, 2025</p>
+                </div>
+                <button class="text-blue-600 hover:text-blue-700">View Report</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Create/Edit Promotion Modal (Hidden by default) -->
+        <div class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-lg">
+            <div class="flex items-center justify-between mb-4">
+              <h2 class="text-xl font-bold text-slate-800">Create New Promotion</h2>
+              <button class="text-slate-500 hover:text-slate-700">✕</button>
+            </div>
+            <form class="space-y-4">
+              <div>
+                <label class="block text-sm font-medium text-slate-600 mb-1">Promotion Name</label>
+                <input
+                  type="text"
+                  class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter promotion name"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-600 mb-1">Description</label>
+                <textarea
+                  class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  rows="3"
+                  placeholder="Enter promotion description"
+                ></textarea>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-slate-600 mb-1">Discount Type</label>
+                  <select class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="percentage">Percentage</option>
+                    <option value="fixed">Fixed Amount</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-600 mb-1">Discount Value</label>
+                  <input
+                    type="number"
+                    class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter value"
+                  />
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-slate-600 mb-1">Start Date</label>
+                  <input
+                    type="date"
+                    class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-600 mb-1">End Date</label>
+                  <input
+                    type="date"
+                    class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-600 mb-1">Usage Limit</label>
+                <input
+                  type="number"
+                  class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter usage limit (leave empty for unlimited)"
+                />
+              </div>
+              <div class="flex items-center justify-end gap-2 mt-6">
+                <button type="button" class="px-4 py-2 border rounded-lg hover:bg-slate-50">Cancel</button>
+                <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                  Create Promotion
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

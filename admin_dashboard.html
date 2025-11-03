@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BarberGO | Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-50 text-slate-800">
+    <!-- Sidebar + Main Layout -->
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-white shadow-md flex flex-col fixed inset-y-0">
+        <div class="p-6 border-b">
+          <h1 class="text-2xl font-bold text-blue-600">BarberGO</h1>
+          <p class="text-sm text-slate-500 mt-1">Admin Panel</p>
+        </div>
+        <nav class="flex-1 p-4 space-y-2">
+          <a
+            href="admin_dashboard.html"
+            class="flex items-center px-3 py-2 rounded-lg text-blue-600 bg-blue-50 font-semibold transition-all duration-200"
+            >🏠 Dashboard</a
+          >
+          <a
+            href="admin_dashboard_profile.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >🏢 Barbershop Profile</a
+          >
+          <a
+            href="admin_dashboard_service.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >✂️ Services</a
+          >
+          <a
+            href="admin_dashboard_barbers.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >👥 Barbers</a
+          >
+          <a
+            href="admin_dashboard_hours.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >🕒 Operating Hours</a
+          >
+          <a
+            href="admin_dashboard_promotions.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >🎯 Promotions</a
+          >
+          <div class="border-t my-4"></div>
+          <a
+            href="admin_dashboard_reservations.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >📅 Reservations</a
+          >
+          <a
+            href="admin_dashboard_financial.html"
+            class="flex items-center px-3 py-2 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+            >💰 Financial Reports</a
+          >
+          <div class="border-t my-4"></div>
+          <button
+            onclick="window.location.href='login.html'"
+            class="w-full flex items-center px-3 py-2 rounded-lg text-red-600 hover:bg-red-50 transition-all duration-200"
+            >🚪 Logout</button
+          >
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="flex-1 ml-64 flex flex-col min-h-screen">
+        <!-- Top Navbar -->
+        <header class="bg-white border-b px-6 py-4">
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl font-semibold text-slate-800">Dashboard</h2>
+            <div class="flex items-center gap-4">
+              <button class="p-2 hover:bg-slate-100 rounded-lg">
+                🔔
+                <span class="bg-red-500 text-white text-xs rounded-full px-1.5 absolute -mt-6 -ml-2">3</span>
+              </button>
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white">
+                  JD
+                </div>
+                <div>
+                  <p class="text-sm font-medium text-slate-800">John's Barbershop</p>
+                  <p class="text-xs text-slate-500">Admin</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="p-6 flex-1">
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+            <!-- Today's Reservations -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="font-medium text-slate-800">Today's Bookings</h3>
+                <span class="text-blue-600">📅</span>
+              </div>
+              <p class="text-3xl font-bold text-slate-800">12</p>
+              <div class="mt-4 flex items-center gap-2">
+                <span class="text-green-600 text-sm">↑ 4</span>
+                <span class="text-slate-500 text-sm">vs yesterday</span>
+              </div>
+            </div>
+
+            <!-- Available Barbers -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="font-medium text-slate-800">Available Barbers</h3>
+                <span class="text-blue-600">👥</span>
+              </div>
+              <p class="text-3xl font-bold text-slate-800">4/5</p>
+              <div class="mt-4 flex items-center gap-2">
+                <span class="text-slate-500 text-sm">1 on break</span>
+              </div>
+            </div>
+
+            <!-- Today's Revenue -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="font-medium text-slate-800">Today's Revenue</h3>
+                <span class="text-blue-600">💰</span>
+              </div>
+              <p class="text-3xl font-bold text-slate-800">$480</p>
+              <div class="mt-4 flex items-center gap-2">
+                <span class="text-green-600 text-sm">↑ $120</span>
+                <span class="text-slate-500 text-sm">vs yesterday</span>
+              </div>
+            </div>
+
+            <!-- Active Promotions -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="font-medium text-slate-800">Active Promotions</h3>
+                <span class="text-blue-600">🎯</span>
+              </div>
+              <p class="text-3xl font-bold text-slate-800">2</p>
+              <div class="mt-4 flex items-center gap-2">
+                <span class="text-slate-500 text-sm">Ends in 5 days</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Reservations -->
+          <div class="bg-white rounded-xl shadow-sm mb-6">
+            <div class="p-6 border-b">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h2 class="text-lg font-semibold text-slate-800">Upcoming Reservations</h2>
+                  <p class="text-sm text-slate-600">Next 3 hours</p>
+                </div>
+                <a href="admin_dashboard_reservations.html" class="text-blue-600 hover:text-blue-700 text-sm">View All</a>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="space-y-4">
+                <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-lg">
+                  <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                    👤
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between">
+                      <h4 class="font-medium text-slate-800">John Doe</h4>
+                      <span class="text-sm text-blue-600">10:30 AM</span>
+                    </div>
+                    <p class="text-sm text-slate-600">Haircut & Beard Trim</p>
+                    <div class="flex items-center gap-2 mt-1">
+                      <span class="text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full">with Mike</span>
+                      <span class="text-xs text-slate-500">45 min</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-lg">
+                  <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                    👤
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between">
+                      <h4 class="font-medium text-slate-800">Alex Smith</h4>
+                      <span class="text-sm text-blue-600">11:15 AM</span>
+                    </div>
+                    <p class="text-sm text-slate-600">Haircut</p>
+                    <div class="flex items-center gap-2 mt-1">
+                      <span class="text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full">with Sarah</span>
+                      <span class="text-xs text-slate-500">30 min</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Popular Services -->
+            <div class="bg-white rounded-xl shadow-sm">
+              <div class="p-6 border-b">
+                <h2 class="text-lg font-semibold text-slate-800">Popular Services</h2>
+                <p class="text-sm text-slate-600">This week's most booked</p>
+              </div>
+              <div class="p-6">
+                <div class="space-y-4">
+                  <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600">
+                      ✂️
+                    </div>
+                    <div class="flex-1">
+                      <div class="flex items-center justify-between">
+                        <h4 class="font-medium text-slate-800">Regular Haircut</h4>
+                        <span class="text-green-600">$25</span>
+                      </div>
+                      <div class="flex items-center justify-between mt-1">
+                        <p class="text-sm text-slate-600">45 bookings</p>
+                        <span class="text-green-600 text-sm">↑ 12%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600">
+                      💈
+                    </div>
+                    <div class="flex-1">
+                      <div class="flex items-center justify-between">
+                        <h4 class="font-medium text-slate-800">Beard Trim</h4>
+                        <span class="text-green-600">$15</span>
+                      </div>
+                      <div class="flex items-center justify-between mt-1">
+                        <p class="text-sm text-slate-600">32 bookings</p>
+                        <span class="text-green-600 text-sm">↑ 8%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Barber Performance -->
+            <div class="bg-white rounded-xl shadow-sm">
+              <div class="p-6 border-b">
+                <h2 class="text-lg font-semibold text-slate-800">Barber Performance</h2>
+                <p class="text-sm text-slate-600">This week's stats</p>
+              </div>
+              <div class="p-6">
+                <div class="space-y-4">
+                  <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                      M
+                    </div>
+                    <div class="flex-1">
+                      <div class="flex items-center justify-between">
+                        <h4 class="font-medium text-slate-800">Mike Johnson</h4>
+                        <div class="flex items-center gap-1">
+                          <span class="text-yellow-500">⭐</span>
+                          <span class="font-medium">4.9</span>
+                        </div>
+                      </div>
+                      <div class="flex items-center justify-between mt-1">
+                        <p class="text-sm text-slate-600">28 clients</p>
+                        <span class="text-green-600 text-sm">98% satisfaction</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                      S
+                    </div>
+                    <div class="flex-1">
+                      <div class="flex items-center justify-between">
+                        <h4 class="font-medium text-slate-800">Sarah Williams</h4>
+                        <div class="flex items-center gap-1">
+                          <span class="text-yellow-500">⭐</span>
+                          <span class="font-medium">4.8</span>
+                        </div>
+                      </div>
+                      <div class="flex items-center justify-between mt-1">
+                        <p class="text-sm text-slate-600">24 clients</p>
+                        <span class="text-green-600 text-sm">96% satisfaction</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+      </div>
+    </div>
+  </body>
+</html>
